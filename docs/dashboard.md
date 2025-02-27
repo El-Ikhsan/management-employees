@@ -11,9 +11,9 @@ Request Body:
 ```json
 {
   "fullName": "yuki suou",
-  "department": "marketing",
+  "departmentName": "marketing",
   "role": "employee", // default atau seorang manager tidak bisa membuat akun dengan role manager (di urus FrontEnd)
-  "domisili": "madiun", // cukup nama kota
+  "domicile": "madiun", // cukup nama kota
   "phone": "085*****",
   "managerId": "A001" // id manager/HRD
 }
@@ -37,12 +37,14 @@ Response Body Success:
     "id": "AX7", // auto generate
     "email": "{{ fullName }}@gmail.com", // auto generate
     "fullName": "yuki suou",
-    "department": "marketing",
+    "departmentId": "MARK02",
+    "departmentName": "marketing",
     "role": "employee",
-    "domisili": "madiun",
+    "domicile": "madiun",
     "phone": "085*****",
     "managerId": "A001", // diambil dari tabel users yang memiliki role manager/admin
-    "maxQuota": "3" // diambil dari tabel quota berdasarkan department
+    "maxQuota": "3", // diambil dari tabel quota berdasarkan departmentId
+    "status": "inActive" // status hanya akan berubah ketika login dan logout
   }
 }
 ```
@@ -66,9 +68,9 @@ Request Body:
 ```json
 {
   "fullName": "yuki suou",
-  "department": "marketing",
+  "departmentName": "marketing",
   "role": "employee",
-  "domisili": "madiun",
+  "domicile": "madiun",
   "phone": "085*****",
   "managerId": "A001"
 }
@@ -90,12 +92,13 @@ Response Body Success:
     "id": "AX7",
     "email": "{{ fullName }}@gmail.com",
     "fullName": "yuki suou", // new
-    "department": "marketing", // new
+    "departmentName": "marketing", // new
     "role": "employee", // new
-    "domisili": "madiun", // new
+    "domicile": "madiun", // new
     "phone": "085*****", // new
     "managerId": "A001", // new
-    "maxQuota": "3"
+    "maxQuota": "3",
+    "status": "inActive"
   }
 }
 ```
@@ -122,12 +125,14 @@ Response Body Success:
     "id": "AX7",
     "email": "{{ fullName }}@gmail.com",
     "fullName": "yuki suou",
-    "department": "marketing",
+    "departmentId": "MARK02",
+    "departmentName": "marketing",
     "role": "employee",
-    "domisili": "madiun",
+    "domicile": "madiun",
     "phone": "085*****",
     "managerId": "A001",
-    "maxQuota": "3"
+    "maxQuota": "3",
+    "status": "inActive"
   }
 }
 ```
@@ -154,23 +159,27 @@ Response Body Success:
     "id": "AX7",
     "email": "{{ fullName }}@gmail.com",
     "fullName": "yuki suou",
-    "department": "marketing",
+    "departmentId": "MARK02",
+    "departmentName": "marketing",
     "role": "employee",
-    "domisili": "madiun",
+    "domicile": "madiun",
     "phone": "085*****",
     "managerId": "A001",
-    "maxQuota": "3"
+    "maxQuota": "3",
+    "status": "inActive"
   },
   {
     "id": "AX10",
     "email": "{{ fullName }}@gmail.com",
     "fullName": "yuki kato",
-    "department": "marketing",
+    "departmentId": "MARK02",
+    "departmentName": "marketing",
     "role": "employee",
-    "domisili": "bandung",
+    "domicile": "bandung",
     "phone": "085*****",
     "managerId": "A001",
-    "maxQuota": "7"
+    "maxQuota": "3",
+    "status": "inActive"
   }
 }
 ```
@@ -220,9 +229,9 @@ Request Body:
 ```json
 {
   "fullName": "yuki suou",
-  "department": "marketing",
+  "departmentName": "marketing",
   "role": "manager", // bisa employee atau manager (di urus FrontEnd)
-  "domisili": "madiun", // cukup nama kota
+  "domicile": "madiun", // cukup nama kota
   "phone": "085*****",
   "managerId": "A001" // id manager/HRD
 }
@@ -246,12 +255,14 @@ Response Body Success:
     "id": "AX7", // auto generate
     "email": "{{ fullName }}@gmail.com", // auto generate
     "fullName": "yuki suou",
-    "department": "marketing",
+    "departmentId": "MARK02",
+    "departmentName": "marketing",
     "role": "manager",
-    "domisili": "madiun",
+    "domicile": "madiun",
     "phone": "085*****",
     "managerId": "A001", // diambil dari tabel users yang memiliki role manager/admin
-    "maxQuota": "3" // diambil dari tabel quota berdasarkan department
+    "maxQuota": "3", // diambil dari tabel quota berdasarkan departmentId
+    "status": "inActive"
   }
 }
 ```
@@ -275,9 +286,9 @@ Request Body:
 ```json
 {
   "fullName": "yuki suou",
-  "department": "marketing",
+  "departmentName": "marketing",
   "role": "manager",
-  "domisili": "madiun",
+  "domicile": "madiun",
   "phone": "085*****",
   "managerId": "A001"
 }
@@ -299,12 +310,14 @@ Response Body Success:
     "id": "AX7",
     "email": "{{ fullName }}@gmail.com",
     "fullName": "yuki suou", // new
-    "department": "marketing", // new
+    "departmentId": "MARK02",
+    "departmentName": "marketing", // new
     "role": "manager", // new
-    "domisili": "madiun", // new
+    "domicile": "madiun", // new
     "phone": "085*****", // new
     "managerId": "A001", // new
-    "maxQuota": "3"
+    "maxQuota": "3",
+    "status": "inActive"
   }
 }
 ```
@@ -331,12 +344,14 @@ Response Body Success:
     "id": "AX7",
     "email": "{{ fullName }}@gmail.com",
     "fullName": "yuki suou",
-    "department": "marketing",
+    "departmentId": "MARK02",
+    "departmentName": "marketing",
     "role": "employee",
-    "domisili": "madiun",
+    "domicile": "madiun",
     "phone": "085*****",
     "managerId": "A001",
-    "maxQuota": "3"
+    "maxQuota": "3",
+    "status": "inActive"
   }
 }
 ```
@@ -363,23 +378,27 @@ Response Body Success:
     "id": "AX7",
     "email": "{{ fullName }}@gmail.com",
     "fullName": "yuki suou",
-    "department": "marketing",
+    "departmentId": "MARK02",
+    "departmentName": "marketing",
     "role": "manager",
-    "domisili": "madiun",
+    "domicile": "madiun",
     "phone": "085*****",
     "managerId": "A001",
-    "maxQuota": "3"
+    "maxQuota": "3",
+    "status": "inActive"
   },
   {
     "id": "AX10",
     "email": "{{ fullName }}@gmail.com",
     "fullName": "yuki kato",
-    "department": "marketing",
+    "departmentId": "MARK02",
+    "departmentName": "marketing",
     "role": "manager",
-    "domisili": "bandung",
+    "domicile": "bandung",
     "phone": "085*****",
     "managerId": "A001",
-    "maxQuota": "7"
+    "maxQuota": "3",
+    "status": "inActive"
   }
 }
 ```
