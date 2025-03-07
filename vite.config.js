@@ -14,17 +14,7 @@ export default defineConfig({
   },
   server: {
     cors: {
-      // the origin you will be accessing via browser
-      origin: import.meta.url.VITE_API_URL,
+      origin: 'http://api-lmsystem.euphemia.site',
     },
   },
-  // server: {
-  //   proxy: {
-  //     '/auth': {
-  //       target: import.meta.url.VITE_API_URL, // URL backend
-  //       changeOrigin: true,
-  //       rewrite: (path) => path.replace(/^\/api/, ''),
-  //     },
-  //   },
-  // },
 })

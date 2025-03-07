@@ -1,26 +1,25 @@
-// src/stores/authStore.js
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { login, logout, getUserProfile } from '@/api/auth' // Import fungsi API
+import { login, logout, getUserProfile } from '@/api/auth'
 
-export const useAuthStore = defineStore('auth', () => {
+export const useAuthUserStore = defineStore('auth', () => {
   const isAuthenticated = ref(false)
   const user = ref(null)
 
   const loginUser = async (email, password) => {
     const userData = await login(email, password)
     isAuthenticated.value = true
-    user.value = userData
+    user.value = userData.data
   }
 
   const logoutUser = async () => {
-    await logout({ userId: user.value.id, token: user.value.token })
+    await logout(user.value.id, user.value.token)
     isAuthenticated.value = false
     user.value = null
   }
 
   const fetchUserProfile = async () => {
-    const profile = await getUserProfile({ userId: user.value.id, token: user.value.token })
+    const profile = await getUserProfile(user.value.id, user.value.token)
     user.value = profile
   }
 

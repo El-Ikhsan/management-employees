@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { useAuthStore } from '@/stores/authUser' // Pastikan path ini benar
+import { useAuthUserStore } from '@/stores/authUserStore'
 import Home from '@/views/Home.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import Absen from '@/views/Absen.vue'
@@ -37,10 +37,11 @@ const router = createRouter({
 
 // Navigation Guard
 router.beforeEach((to, from, next) => {
-  const authStore = useAuthStore()
+  const authUserStore = useAuthUserStore()
 
-  if (to.meta.requiresAuth && !authStore.isAuthenticated) {
-    // Jika halaman memerlukan login dan pengguna belum login
+  console.log(to)
+
+  if (to.meta.requiresAuth && !authUserStore.isAuthenticated) {
     next('/login')
   } else {
     next()

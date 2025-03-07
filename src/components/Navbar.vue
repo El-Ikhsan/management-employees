@@ -159,7 +159,7 @@
             />
           </svg>
 
-          <span class="ml-2 text-sm font-medium">Logout</span>
+          <span @click="handleLogout" class="ml-2 text-sm font-medium">Logout</span>
         </router-link>
       </div>
     </div>
@@ -187,7 +187,17 @@
 </template>
 
 <script setup>
-// Jika diperlukan, tambahkan logika atau impor di sini
+import { useAuthUserStore } from '@/stores/authUserStore'
+
+const authUserStore = useAuthUserStore()
+
+const handleLogout = async () => {
+  try {
+    await authUserStore.logoutUser()
+  } catch (error) {
+    alert(error.message)
+  }
+}
 </script>
 
 <style scoped>

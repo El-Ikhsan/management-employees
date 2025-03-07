@@ -71,18 +71,20 @@
 
 <script setup>
 import { ref } from 'vue'
-import { useAuthStore } from '@/stores/authUser'
+import { useAuthUserStore } from '@/stores/authUserStore'
 import { useRouter } from 'vue-router'
 
 const email = ref('')
 const password = ref('')
-const authStore = useAuthStore()
+const authUserStore = useAuthUserStore()
 const router = useRouter()
 
-const handleLogin = () => {
-  // Contoh login sederhana
-  console.log(email.value, password.value)
-  authStore.loginUser({ email: email.value, password: password.value }) // Simulasikan login
-  router.push('/dashboard') // Redirect ke dashboard setelah login
+const handleLogin = async () => {
+  try {
+    await authUserStore.loginUser(email.value, password.value)
+    router.push('/dashboard')
+  } catch (error) {
+    alert(error.message)
+  }
 }
 </script>

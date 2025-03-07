@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <!-- Sidebar -->
-    <aside v-if="isAuthenticated" class="bg-sky-500 w-64 min-h-screen">
+    <aside v-if="showNavbar" class="bg-sky-500 w-64 min-h-screen">
       <!-- Navbar -->
       <Navbar />
     </aside>
@@ -15,11 +15,23 @@
 
 <script setup>
 import Navbar from '@/components/Navbar.vue'
-import { useAuthStore } from '@/stores/authUser'
-import { computed } from 'vue'
+import { useAuthUserStore } from '@/stores/authUserStore'
+import { watch, ref, computed } from 'vue'
+import { useRoute } from 'vue-router'
 
-const authStore = useAuthStore()
-const isAuthenticated = computed(() => authStore.isAuthenticated)
+const authUserStore = useAuthUserStore()
+const route = useRoute()
+
+const isAuthenticated = computed(() => authUserStore.isAuthenticated)
+const showNavbar = ref(isAuthenticated.value && !['/', '/login'].includes(route.path))
+
+// Watch perubahan rute secara real-time
+watch(
+  () => route.path,
+  (newPath) => {
+    showNavbar.value = isAuthenticated.value && !['/', '/login'].includes(newPath)
+  },
+)
 </script>
 
 <style scoped>
