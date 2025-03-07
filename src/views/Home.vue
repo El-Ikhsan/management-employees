@@ -40,10 +40,14 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const goToDashboard = () => {
-  router.push('/dashboard') // Arahkan ke Dashboard
+  router.push('/dashboard')
 }
 </script>
 
 <style scoped>
-/* Tambahkan styling sesuai kebutuhan */
+h1 {
+  font-family:
+    'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
+    sans-serif;
+}
 </style>
