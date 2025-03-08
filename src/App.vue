@@ -1,5 +1,5 @@
 <template>
-  <div class="flex">
+  <div class="flex bg-[#001524]">
     <!-- Sidebar -->
     <aside v-if="showNavbar" class="bg-sky-500 w-64 min-h-screen">
       <!-- Navbar -->

@@ -17,6 +17,8 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
+src/assets/colorPalet.txt
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
