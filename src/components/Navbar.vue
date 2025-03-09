@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="flex flex-col items-center w-full h-full overflow-hidden text-[#D6CC99] bg-[#001524] border-r-5 border-[#000a12]"
+    class="flex flex-col items-center w-full h-full overflow-hidden text-[#D6CC99] bg-[#0d161d] border-r-5 border-[#000a12]"
   >
     <router-link to="/" class="flex items-center w-full px-3 mt-3">
       <svg

@@ -1,35 +1,46 @@
 <template>
-  <div class="min-h-screen bg-gray-100 py-8">
-    <div class="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-8">
+  <div class="min-h-screen bg-[#0d161d] p-4">
+    <div class="max-w-6xl mx-auto bg-[#1b2227] shadow-lg rounded-lg p-8">
       <!-- Judul Halaman -->
-      <h1 class="text-3xl font-bold text-gray-800 mb-8">User Profile</h1>
+      <h1 class="text-3xl font-bold text-[#D6CC99] mb-8">User Profile</h1>
+
+      <!-- Foto Profil -->
+      <div class="flex justify-center mb-8">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-[#D6CC99]">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvMgImqvMFMf-MapC8tDsQE4TciufEo4XuBw&s"
+            alt="Profile Picture"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
 
       <!-- Grid untuk Dua Kolom -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-[#D6CC99]">
         <!-- Kolom Pertama -->
         <div>
           <!-- Full Name -->
           <div class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-700">Full Name</h2>
-            <p class="text-gray-900 mt-2">{{ userData.fullName }}</p>
+            <h2 class="text-xl font-semibold">Full Name</h2>
+            <p class="text-white mt-2">{{ userData.fullName }}</p>
           </div>
 
           <!-- Department -->
           <div class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-700">Department</h2>
-            <p class="text-gray-900 mt-2">{{ userData.department }}</p>
+            <h2 class="text-xl font-semibold">Department</h2>
+            <p class="text-white mt-2">{{ userData.department }}</p>
           </div>
 
           <!-- Domisili -->
           <div class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-700">Domisili</h2>
-            <p class="text-gray-900 mt-2">{{ userData.domisili }}</p>
+            <h2 class="text-xl font-semibold">Domisili</h2>
+            <p class="text-white mt-2">{{ userData.domisili }}</p>
           </div>
 
           <!-- Max Quota -->
           <div class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-700">Max Quota</h2>
-            <p class="text-gray-900 mt-2">{{ userData.maxQuota }}</p>
+            <h2 class="text-xl font-semibold">Max Quota</h2>
+            <p class="text-white mt-2">{{ userData.maxQuota }}</p>
           </div>
         </div>
 
@@ -37,26 +48,26 @@
         <div>
           <!-- Email -->
           <div class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-700">Email</h2>
-            <p class="text-gray-900 mt-2">{{ userData.email }}</p>
+            <h2 class="text-xl font-semibold">Email</h2>
+            <p class="text-white mt-2">{{ userData.email }}</p>
           </div>
 
           <!-- Manager ID -->
           <div class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-700">Manager ID</h2>
-            <p class="text-gray-900 mt-2">{{ userData.managerId }}</p>
+            <h2 class="text-xl font-semibold">Manager ID</h2>
+            <p class="text-white mt-2">{{ userData.managerId }}</p>
           </div>
 
           <!-- Phone -->
           <div class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-700">Phone</h2>
-            <p class="text-gray-900 mt-2">{{ userData.phone }}</p>
+            <h2 class="text-xl font-semibold">Phone</h2>
+            <p class="text-white mt-2">{{ userData.phone }}</p>
           </div>
 
           <!-- ID -->
           <div class="mb-6">
-            <h2 class="text-xl font-semibold text-gray-700">ID</h2>
-            <p class="text-gray-900 mt-2">{{ userData.id }}</p>
+            <h2 class="text-xl font-semibold">ID</h2>
+            <p class="text-white mt-2">{{ userData.id }}</p>
           </div>
         </div>
       </div>

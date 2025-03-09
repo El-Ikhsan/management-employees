@@ -1,5 +1,5 @@
 main-font = #D6CC99
 hover-bg = #D6CC99
 main-bg = #001524
-secondary-bg = #2b343b
+secondary-bg = #1b2227
 Tertiary-bg = #001524

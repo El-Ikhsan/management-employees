@@ -1,5 +1,5 @@
 <template>
-  <div class="flex bg-[#001524]">
+  <div class="flex bg-[#0d161d]">
     <!-- Sidebar -->
     <aside v-if="showNavbar" class="bg-sky-500 w-64 min-h-screen">
       <!-- Navbar -->
@@ -7,7 +7,7 @@
     </aside>
 
     <!-- Konten Utama -->
-    <main class="flex-1">
+    <main class="flex-1 p-2">
       <router-view />
     </main>
   </div>
