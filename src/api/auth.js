@@ -1,7 +1,5 @@
 import axios from 'axios'
-import { useRouter } from 'vue-router'
 
-const router = useRouter()
 const url = import.meta.env.VITE_API_URL
 console.log(url)
 

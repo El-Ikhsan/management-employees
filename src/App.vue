@@ -7,7 +7,7 @@
     </aside>
 
     <!-- Konten Utama -->
-    <main class="flex-1 p-2">
+    <main :class="mainClass">
       <router-view />
     </main>
   </div>
@@ -25,7 +25,10 @@ const route = useRoute()
 const isAuthenticated = computed(() => authUserStore.isAuthenticated)
 const showNavbar = ref(isAuthenticated.value && !['/', '/login'].includes(route.path))
 
-// Watch perubahan rute secara real-time
+const mainClass = computed(() => {
+  return ['/', '/login'].includes(route.path) ? 'flex-1' : 'flex-1 p-2'
+})
+
 watch(
   () => route.path,
   (newPath) => {
@@ -34,6 +37,4 @@ watch(
 )
 </script>
 
-<style scoped>
-/* Tambahkan styling global jika diperlukan */
-</style>
+<style scoped></style>

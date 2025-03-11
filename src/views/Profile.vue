@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-[#0d161d] p-4">
-    <div class="max-w-6xl mx-auto bg-[#1b2227] shadow-lg rounded-lg p-8">
+    <div class="max-w-6xl mx-auto bg-[#2b343b] shadow-lg rounded-lg p-8">
       <!-- Judul Halaman -->
       <h1 class="text-3xl font-bold text-[#D6CC99] mb-8">User Profile</h1>
 
