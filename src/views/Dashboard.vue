@@ -1,6 +1,21 @@
 <template>
-  <div class="p-4 bg-[#2b343b] rounded">
-    <h1 class="text-3xl font-bold text-[#D6CC99]">Dashboard</h1>
-    <p class="text-white">Ini adalah halaman Dashboard.</p>
+  <div class="flex flex-col">
+    <div class="p-4 bg-[#2b343b] rounded">
+      <h1 class="text-3xl font-bold text-[#D6CC99]">Dashboard</h1>
+      <p class="text-white">Selamat datang di dashboard {{ role }} {{ name }}</p>
+    </div>
+    <div>
+      <StatusBox />
+    </div>
   </div>
 </template>
+
+<script setup>
+import StatusBox from '@/components/StatusBox.vue'
+import { useAuthUserStore } from '@/stores/authUserStore'
+import { computed } from 'vue'
+
+const authUserStore = useAuthUserStore()
+const role = computed(() => authUserStore.userAuth.role)
+const name = computed(() => authUserStore.userData.fullName)
+</script>

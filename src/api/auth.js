@@ -26,7 +26,7 @@ const logout = async (userId, token) => {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        Authorization: `Barear ${token}`,
+        Authorization: `Bearer ${token}`,
       },
       userId,
       status: 'inActive',
@@ -40,12 +40,13 @@ const logout = async (userId, token) => {
 
 const getUserProfile = async (userId, token) => {
   try {
-    const response = await axios.get(`${url}/api/auth/:${userId}`, {
+    const response = await axios.get(`${url}/api/auth/${userId}`, {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
-        Authorization: `Barear ${token}`,
+        Authorization: `Bearer ${token}`,
       },
+      userId,
     })
     return response.data
   } catch (error) {

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex bg-[#0d161d]">
+  <div class="flex bg-[#D6CC99]">
     <!-- Sidebar -->
     <aside v-if="showNavbar" class="bg-sky-500 w-64 min-h-screen">
       <!-- Navbar -->
@@ -26,7 +26,7 @@ const isAuthenticated = computed(() => authUserStore.isAuthenticated)
 const showNavbar = ref(isAuthenticated.value && !['/', '/login'].includes(route.path))
 
 const mainClass = computed(() => {
-  return ['/', '/login'].includes(route.path) ? 'flex-1' : 'flex-1 p-2'
+  return ['/', '/login'].includes(route.path) ? 'flex-1' : 'flex-1 p-4'
 })
 
 watch(
