@@ -1,10 +1,13 @@
 <template>
-  <div class="flex flex-col">
+  <div class="flex flex-col m-4">
+    <!-- Header -->
     <div class="p-4 bg-[#2b343b] rounded">
       <h1 class="text-3xl font-bold text-[#D6CC99]">Dashboard</h1>
       <p class="text-white">Selamat datang di dashboard {{ role }} {{ name }}</p>
     </div>
-    <div>
+
+    <!-- Content -->
+    <div class="flex flex-col mt-4 w-full bg-[#2b343b] p-4 rounded">
       <StatusBox />
     </div>
   </div>

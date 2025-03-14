@@ -11,7 +11,6 @@ export const useAuthUserStore = defineStore('auth', () => {
     const userData = await login(email, password)
     isAuthenticated.value = true
     userAuth.value = userData.data
-    getUser()
   }
 
   const logoutUser = async () => {

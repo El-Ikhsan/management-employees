@@ -1,7 +1,6 @@
 <template>
-  <div class="min-h-screen bg-[#2b343b] shadow-lg rounded-lg p-8">
+  <div class="bg-[#2b343b] shadow-lg py-10 p-10 rounded">
     <!-- Judul Halaman -->
-    <h1 class="text-3xl font-bold text-[#D6CC99] mb-8">User Profile</h1>
 
     <!-- Foto Profil -->
     <div class="flex justify-center mb-8">
@@ -89,7 +88,6 @@ const fetchUserData = async () => {
     console.error('Gagal memuat data pengguna:', error)
   }
 }
-console.log(userData)
 
 watch(
   () => authUserStore.userData,

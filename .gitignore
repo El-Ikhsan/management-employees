@@ -19,7 +19,7 @@ coverage
 
 src/assets/colorPalet.txt
 src/components/Alert.vue
-src/components/StatusBox.vue
+
 
 # Editor directories and files
 .vscode/*

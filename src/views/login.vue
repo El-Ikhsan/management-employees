@@ -82,6 +82,7 @@ const router = useRouter()
 const handleLogin = async () => {
   try {
     await authUserStore.loginUser(email.value, password.value)
+    await authUserStore.getUser()
     router.push('/dashboard')
   } catch (error) {
     alert(error.message)
