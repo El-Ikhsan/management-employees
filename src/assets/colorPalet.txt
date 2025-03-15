@@ -3,3 +3,4 @@ hover-bg = #D6CC99
 main-bg = #001524 / #0d161d
 secondary-bg = #2b343b / #1b2227 
 Tertiary-bg = #000a12 
+4-bg = #FCFFC1

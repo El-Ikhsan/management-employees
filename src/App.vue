@@ -22,21 +22,21 @@
 import Navbar from '@/components/Navbar.vue'
 import Sidebar from '@/components/Sidebar.vue'
 import { useAuthUserStore } from '@/stores/authUserStore'
-import { watch, computed } from 'vue'
+import { watch, computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 
 const authUserStore = useAuthUserStore()
 const route = useRoute()
 
-const isAuthenticated = computed(() => authUserStore.isAuthenticated)
-const showNavbar = computed(() => isAuthenticated.value && !['/login'].includes(route.path))
+const isAuthenticated = ref(() => authUserStore.isAuthenticated)
+const showNavbar = ref(() => isAuthenticated.value && !['/login'].includes(route.path))
 const showSidebar = computed(() => isAuthenticated.value && !['/', '/login'].includes(route.path))
 
 const mainClass = computed(() => {
-  if (['/', '/login'].includes(route.path)) {
+  if (['/login'].includes(route.path)) {
     return 'flex-1'
   } else {
-    return showSidebar.value ? 'flex-1 pl-54 pt-16' : 'flex-1 pl-54 pt-16'
+    return showSidebar.value ? 'flex-1 pl-54 pt-16' : 'flex-1'
   }
 })
 
