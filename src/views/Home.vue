@@ -1,6 +1,6 @@
 <template>
   <!-- hero section -->
-  <section id="hero" class="bg-[#001524]">
+  <section id="hero" class="bg-[#001524] pt-16">
     <div class="grid max-w-screen-xl px-20 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
       <div class="mr-auto place-self-center lg:col-span-7">
         <h1

@@ -44,7 +44,7 @@
         </svg>
       </div>
     </div>
-    <div class="flex max-w-85 overflow-hidden bg-[#FCFFC1] rounded-lg shadow-lg">
+    <div class="flex max-w-85 overflow-hidden bg-[#D6CC99] rounded-lg shadow-lg">
       <div class="w-60 p-4 pl-6">
         <h1 class="text-2xl font-bold text-gray-800">Ditolak</h1>
         <h1 class="text-4xl font-bold text-gray-700">0</h1>
